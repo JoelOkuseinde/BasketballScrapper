@@ -6,7 +6,33 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        //list of all team names
+
+        PlayerMinuteScraper.playerMinuteScraper();
+
+//        //populate all teams with current data
+//        HashMap<String, Team> teamsMap = parseTeamInfo();
+//        //return the schedule
+//        List<List<String>> schedule = ScheduleParser.returnScheule();
+//        System.out.println("+++++++++++++++++++++++++++++++");
+//        //calculate all data
+//        for (int i = 0; i < 11; i++){
+//            System.out.println(schedule.get(i).get(0) + " vs " + schedule.get(i).get(1) + " @ " + schedule.get(i).get(2));
+//            //simply return two scores given two teams
+//            List<String> results = simpleTeamProjection(teamsMap.get(schedule.get(i).get(0)), teamsMap.get(schedule.get(i).get(1)));
+//            System.out.println("The total for the game will be " + results.get(4));
+//
+//            System.out.println("The winning team is " + results.get(0));
+//            System.out.println("Their predicted score is " + results.get(1));
+//            System.out.println("The losing team is " + results.get(2));
+//            System.out.println("Their predicted score is " + results.get(3));
+//
+//            System.out.println("+++++++++++++++++++++++++++++++");
+//        }
+
+    }
+
+    private static HashMap<String,Team> parseTeamInfo() {
+        //list of all teams
         String[] allTeamsStrings = {
                 "Atlanta","Boston","Brooklyn","Charlotte","Chicago",
                 "Cleveland","Dallas","Denver","Detroit","Golden State",
@@ -16,41 +42,18 @@ public class Main {
                 "Sacramento", "San Antonio", "Toronto", "Utah", "Washington"
         };
 
-//        PlayerMinuteScraper.playerMinuteScraper();
-
-        //populate all teams with current data
+        //simultaneously call instantiate a new a team object for every string in the array above
         Team[] allTeamsArr = Arrays.stream(allTeamsStrings)
                 .parallel()
                 .map(Team::new)
                 .toArray(Team[]::new);
 
+        //add all the teams to a hashmap then return the hashmap
         HashMap<String, Team> teamsMap = new HashMap<>();
         for (int i = 0; i < allTeamsStrings.length; i++) {
             teamsMap.put(allTeamsStrings[i], allTeamsArr[i]);
         }
-
-        //return the schedule
-        List<List<String>> schedule = ScheduleParser.returnScheule();
-
-        System.out.println("+++++++++++++++++++++++++++++++");
-
-        //calculate all data
-
-        for (int i = 0; i < 11; i++){
-            System.out.println(schedule.get(i).get(0) + " vs " + schedule.get(i).get(1) + " @ " + schedule.get(i).get(2));
-            //simply return two scores given two teams
-            List<String> results = simpleTeamProjection(teamsMap.get(schedule.get(i).get(0)), teamsMap.get(schedule.get(i).get(1)));
-            System.out.println("The total for the game will be " + results.get(4));
-
-            System.out.println("The winning team is " + results.get(0));
-            System.out.println("Their predicted score is " + results.get(1));
-            System.out.println("The losing team is " + results.get(2));
-            System.out.println("Their predicted score is " + results.get(3));
-
-
-            System.out.println("+++++++++++++++++++++++++++++++");
-        }
-
+        return teamsMap;
     }
 
     private static List<String> simpleTeamProjection(Team _teamA, Team _teamB) {

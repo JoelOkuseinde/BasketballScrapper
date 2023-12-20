@@ -9,9 +9,10 @@ public class PlayerMinuteScraper {
         client.getOptions().setJavaScriptEnabled(false);
         client.getOptions().setCssEnabled(false);
 
-        HtmlPage minutesPage = client.getPage("https://basketball.realgm.com/nba/stats");
-        int table =  minutesPage.getByXPath("//table").size();
-        System.out.println(table);
+        HtmlPage minutesPage = client.getPage("https://www.teamrankings.com/nba/player-stat/minutes-played");
+        HtmlTable table =  minutesPage.getFirstByXPath("//table");
+        HtmlTableRow checking = table.getRow(3);
+        System.out.println(checking.getCell(4).getTextContent());
     }
 }
 

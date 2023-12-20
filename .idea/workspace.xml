@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e607e65-f08d-47cc-9063-14d1fdbb2770" name="Changes" comment="Can parse the web" />
+    <list default="true" id="0e607e65-f08d-47cc-9063-14d1fdbb2770" name="Changes" comment="Can parse the web">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +96,7 @@
       <workItem from="1701897738157" duration="10673000" />
       <workItem from="1701965302523" duration="26601000" />
       <workItem from="1702675901420" duration="23675000" />
-      <workItem from="1702778571039" duration="11774000" />
+      <workItem from="1702778571039" duration="13288000" />
     </task>
     <task id="LOCAL-00001" summary="Can parse the web">
       <option name="closed" value="true" />
@@ -103,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702954085694</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Can parse the web">
+      <option name="closed" value="true" />
+      <created>1702954151322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702954151322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
